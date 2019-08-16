@@ -1,0 +1,11 @@
+language: node_js
+node_js: 10
+sudo: false
+cache:
+  yarn: true
+jobs:
+  include:
+    - stage: lint
+      script: yarn lint
+    - stage: test
+    - stage: build
