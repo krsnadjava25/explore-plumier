@@ -1,0 +1,42 @@
+{
+  "name": "explore-plumier",
+  "version": "0.1.0",
+  "scripts": {
+    "start": "ts-node-dev --inspect -- src/index",
+    "precommit": "lint-staged",
+    "lint": "eslint '{src,test}/**/*.ts' && tsc --noEmit --skipLibCheck",
+    "lint:fix": "eslint --fix '{src,test}/**/*.ts'",
+    "prettier": "prettier --write '{src,test}/**/*.ts'",
+    "test": "jest",
+    "postbuild": "ts-node scripts/postbuild.ts",
+    "build": "tsc -p tsconfig.build.json"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "npm run prettier",
+      "git add"
+    ]
+  },
+  "dependencies": {
+    "@types/dotenv": "^6.1.1",
+    "dotenv": "^8.0.0",
+    "plumier": "^1.0.0-beta.9"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.15",
+    "@types/supertest": "^2.0.8",
+    "@typescript-eslint/eslint-plugin": "^2.0.0",
+    "@typescript-eslint/parser": "^2.0.0",
+    "eslint": "^6.1.0",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "husky": "^3.0.3",
+    "jest": "^24.8.0",
+    "lint-staged": "^9.2.1",
+    "prettier": "^1.18.2",
+    "supertest": "^4.0.2",
+    "ts-jest": "^24.0.2",
+    "ts-node-dev": "^1.0.0-pre.40",
+    "typescript": "^3.5.3"
+  }
+}
