@@ -6,5 +6,6 @@ cache:
 jobs:
   include:
     - stage: lint
+      script: yarn lint
     - stage: test
     - stage: build
